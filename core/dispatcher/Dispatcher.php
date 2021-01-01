@@ -10,7 +10,6 @@ abstract Class Dispatcher
 	# 不可见静态方法的入口
 	public static function __callStatic($method, $args)
 	{
-        print_r($args);die;
 		$instance = static::getInstance();
         
 		# 回调不可见静态函数

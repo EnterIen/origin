@@ -19,13 +19,32 @@ Class Container extends Dispatcher
 		if (!self::$container[$class] instanceof $class || !isset(self::$container[$class]) ){
 			# 没有则调用父类方法 进行实例
 			self::$container[$class] = self::newObject();
-			
+
 			// echo "容器中实例的类:" . PHP_EOL;
 			// print_r(self::$container);
 		}
 
 		return self::$container[$class];
 	}
+
+	// 设置全局打印函数
+	protected function displayOfGlobal($var)
+    {
+        switch ($var) {
+            case is_object($var):
+                echo "<pre>";
+                print_r($var);
+                break;
+            case is_array($var):
+                echo "<pre>";
+                print_r($var);
+                break;
+            case is_string($var):
+                echo $var;
+                break;
+        }
+        // exit;
+    }
 }
 
 
