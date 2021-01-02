@@ -7,3 +7,4 @@ Router::get('/welcome', function () {
 });
 
 Router::get('/unit/list', 'RouterController@getUnitList');
+Router::get('/unit/config', 'RouterController@getConfig');

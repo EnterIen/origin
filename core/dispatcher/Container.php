@@ -42,8 +42,10 @@ Class Container extends Dispatcher
             case is_string($var):
                 echo $var;
                 break;
+            case is_numeric($var):
+                echo $var;
+                break;
         }
-        // exit;
     }
 }
 

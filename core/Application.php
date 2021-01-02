@@ -18,6 +18,11 @@ Class Application extends Container
 		echo "hi";
 	}
 
+	protected function reflectionTest(Config $config)
+	{
+		return $config::get();
+	}
+
 	public function run()
 	{
         ////////////////////////[Config]////////////////////////////
@@ -37,14 +42,14 @@ Class Application extends Container
 
 		////////////////////////[Router]////////////////////////////
 		$router = Router::start();
-		print_r($router);die;
+		// print_r($router);die;
 		$controller = 'controller\\' . $router['controller'] ;
 		$action = $router['action'];
 		$args = $router['args'];
 		
-		
-		# $controller::call($action,$args);die;
-		call_user_func_array([$controller::register(),$action],$args);		
+		////////////////////////[Reflection]////////////////////////////
+		$this->displayOfGlobal($controller::call($action,$args));
+		// call_user_func_array([$controller::register(),$action],$args);		
 
 
 

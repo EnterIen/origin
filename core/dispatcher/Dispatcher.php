@@ -36,6 +36,10 @@ abstract Class Dispatcher
         $object = get_called_class();
         # 反射类 获取类的相关信息
         $reflect = new \ReflectionMethod($object, $method);	
+        
+        // echo "<pre>";
+        // print_r($reflect);
+        // print_r($reflect->getParameters());die;
 
         $params = [];
         # 遍历类方法的参数数组

@@ -9,4 +9,6 @@ require_once APP_PATH . '/core/Autoload.php';
 
 // Application::sayHi();
 
+// Application::reflectionTest();
+
 Application::register()->run();

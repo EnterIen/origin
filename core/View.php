@@ -14,6 +14,7 @@ Class View extends Container
 
 		# 通过 `extract` 将数组键值转换为变量名获取键值
 		if (!empty($data)) {
+			$data = ['data' => $data];
 			extract($data);
 		}
 
@@ -32,7 +33,12 @@ Class View extends Container
 			require $common;
 			$content =  ob_get_clean();
 		}
+
 		# 返回所有加载视图
+		// $result = [
+		// 	'content' => $content,
+		// 	'data' => $data,
+		// ];
 		return $content;
 	}
 }
